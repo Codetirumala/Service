@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { auth } from './firebase';
 import { ThemeProvider, createTheme, Box } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
+import PolygonLoader from './components/PolygonLoader';
 
 // Components
 import Navbar from './components/Navbar';
@@ -92,6 +93,22 @@ const MainContent = ({ children }) => (
 );
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time between 5-10 seconds
+    const loadingTime = Math.random() * 5000 + 5000; // Random time between 5-10 seconds
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, loadingTime);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return <PolygonLoader />;
+  }
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
