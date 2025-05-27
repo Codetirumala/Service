@@ -16,6 +16,7 @@ import HeadsetMicIcon from '@mui/icons-material/HeadsetMic';
 import Lottie from 'lottie-react';
 import loginAnimation from '../assets/login-animation.json';
 import './Login.css';
+import TypingTitle from './TypingTitle';
 
 function Login() {
   const navigate = useNavigate();
@@ -75,19 +76,19 @@ function Login() {
               <div className="login-logo">
                 <HeadsetMicIcon sx={{ color: '#2196F3', fontSize: 38 }} />
               </div>
-              <Typography
-                component="h1"
-                variant="h4"
-                sx={{
-                  mb: 1,
+              <TypingTitle
+                className="login-typing-title"
+                style={{
+                  fontSize: '2.2rem',
                   fontWeight: 700,
                   color: '#1a237e',
                   textAlign: 'center',
                   letterSpacing: 1,
+                  minHeight: 48,
+                  display: 'block',
+                  marginBottom: 8,
                 }}
-              >
-                Welcome to Service Desk
-              </Typography>
+              />
 
               <Typography
                 variant="subtitle1"
