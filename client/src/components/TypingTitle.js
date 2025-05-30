@@ -41,7 +41,7 @@ const TypingTitle = ({
   return (
     <span className={className} style={style}>
       {displayed}
-      <span style={{ color: '#1976d2', fontWeight: 700 }}>|</span>
+      <span style={{ color: '#1976d2', fontWeight: 700 }}></span>
     </span>
   );
 };
