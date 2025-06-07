@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: service-desk
+    env: node
+    buildCommand: cd client && npm install && npm run build
+    staticPublishPath: ./client/build
+    envVars:
+      - key: NODE_VERSION
+        value: 18.0.0 
